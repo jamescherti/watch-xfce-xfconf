@@ -36,7 +36,7 @@ $ xfce4-settings-manager &
 
 Execute monitor-xfconf-changes:
 ```console
-$ python3 monitor-xfconf-changes
+$ python3 ./monitor-xfconf-changes
 [INFO] You can start modifying XFCE 4 settings with xfce4-settings-manager. Your changes will be displayed in this terminal...
 ```
 
