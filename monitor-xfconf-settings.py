@@ -229,6 +229,7 @@ def main():
             delta = xfconf_query_list.diff()
             for item in delta:
                 print(item)
+            sys.stdout.flush()
     except KeyboardInterrupt:
         pass
 
