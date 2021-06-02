@@ -42,5 +42,5 @@ $ ./monitor-xfconf-settings.py
 - Supported Xfconf types: uint, int, string, bool, array, double.
 
 ## Links:
-- monitor-xfconf-changes GitHub repository: https://github.com/jamescherti/monitor-xfconf-changes/
+- The GitHub repository of 'monitor-xfconf-changes': https://github.com/jamescherti/monitor-xfconf-changes/
 - More information about Xfconf: https://wiki.xfce.org/releng/4.6/general-info/
