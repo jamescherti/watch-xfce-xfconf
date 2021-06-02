@@ -12,9 +12,9 @@ Configuring XFCE 4 programmatically is useful if you want to have the same confi
 ## Requirements
 
 Python 3 requirements:
-- [psutil](https://pypi.org/project/psutil/)
-- [lxml](https://pypi.org/project/lxml/)
-- [mypy](https://pypi.org/project/mypy/)
+- psutil
+- lxml
+- mypy
 
 ## Usage
 
