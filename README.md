@@ -26,7 +26,7 @@ $ cd monitor-xfconf-changes
 
 Install the Python 3 requirements using pip:
 ```console
-$ pip install --user -r requirements.txt
+$ python3 -m pip install --user -r requirements.txt
 ```
 
 Run xfce4-settings-manager in the background:
