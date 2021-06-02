@@ -24,6 +24,11 @@ $ git clone https://github.com/jamescherti/monitor-xfconf-changes/
 $ cd monitor-xfconf-changes
 ```
 
+Install the Python 3 requirements using pip:
+```console
+pip install --user -r requirements.txt
+```
+
 Run xfce4-settings-manager in the background:
 ```console
 $ xfce4-settings-manager &
