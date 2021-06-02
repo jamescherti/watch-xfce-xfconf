@@ -1,4 +1,4 @@
-# monitor-xfconf-changes - a command-line tool that can help you to configure XFCE 4 programmatically.
+# monitor-xfconf-changes - a command-line tool that can help you to configure XFCE 4 programmatically
 
 The command-line tool monitor-xfconf-changes will display the xfconf-query commands of all the settings that are modified by any software that modifies Xfconf: xfce4-settings-manager, thunar, catfish, ristretto...
 
