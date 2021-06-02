@@ -4,7 +4,7 @@ The command-line tool monitor-xfconf-changes will display the xfconf-query comma
 
 You can then add the xfconf-query commands to a Shell script that you can use to configure XFCE 4 programmatically.
 
-Configuring XFCE 4 programmatically is useful if you want to have the same configuration on several XFCE 4 desktops.
+Configuring XFCE 4 programmatically is useful if you want to have the same XFCE 4 settings on several computers.
 
 ## Author
 - [James Cherti](https://github.com/jamescherti/)
