@@ -29,14 +29,14 @@
 # --
 # pylint: disable=invalid-name
 #
-"""This script will help you to configure 'XFCE 4' programmatically.
+"""This command-line tool will help you to configure XFCE 4 programmatically.
 
-It will display the 'xfconf-query' commands of all the 'Xfconf' settings that
-are modified by 'xfce4-settings-manager' (or by any other software that
-modifies 'Xfconf' like 'Thunar', 'Catfish', 'Ristretto'...).
+It will display the xfconf-query commands of all the Xfconf settings that
+are bring modified by xfce4-settings-manager (or by any other software that
+modifies Xfconf like Thunar, Catfish, Ristretto...).
 
-You can then add the 'xfconf-query' commands to a Shell script that you can use
-to configure 'XFCE 4' programmatically.
+You can then add the xfconf-query commands to a Shell script that you can use
+to configure XFCE 4 programmatically.
 
 """
 
