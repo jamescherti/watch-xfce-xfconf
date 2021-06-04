@@ -50,8 +50,13 @@ setup(
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: End Users/Desktop",
-        "Topic :: Desktop Environment :: Window Managers :: XFCE",
         "License :: OSI Approved :: MIT License",
+        "Environment :: Console",
+        "Environment :: X11 Applications",
+        "Operating System :: POSIX :: Linux",
+        "Operating System :: POSIX :: Other",
+        "Topic :: Desktop Environment :: Window Managers :: XFCE",
+        "Topic :: Desktop Environment :: Window Managers",
 
         "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3",
