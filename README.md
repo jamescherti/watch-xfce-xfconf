@@ -40,12 +40,12 @@ $ python3 ./monitor-xfconf-changes
 [INFO] You can start modifying XFCE 4 settings with xfce4-settings-manager. Your changes will be displayed in this terminal...
 ```
 
-## Features:
+## Features
 - Parse the XML files that are in the directory: "~/.config/xfce4/xfconf/xfce-perchannel-xml/",
 - Monitor changes in XFCE 4 settings / Xfconf,
 - Display xfconf-query commands,
 - Supported Xfconf types: uint, int, string, bool, array, double.
 
-## Links:
+## Links
 - The GitHub repository of 'monitor-xfconf-changes': https://github.com/jamescherti/monitor-xfconf-changes/
 - More information about Xfconf: https://wiki.xfce.org/releng/4.6/general-info/
