@@ -154,10 +154,10 @@ class Xfconf:
         return "{}\n".format("\n".join(commands))
 
     def _parse_xfconf_perchannel_xml(self,
-               xml_file: str,
-               root: Any = None,
-               channel_name: str = "",
-               property_path: str = ""):
+                                     xml_file: str,
+                                     root: Any = None,
+                                     channel_name: str = "",
+                                     property_path: str = ""):
         """Parse the Xfconf XML."""
         if root is None:
             tree = ETree.parse(xml_file)
@@ -187,10 +187,12 @@ class Xfconf:
 
             # 'empty' = contains sub items
             if property_type == "empty":
-                self._parse_xfconf_perchannel_xml(xml_file=xml_file,
-                            root=elem,
-                            channel_name=channel_name,
-                            property_path=cur_property_path)
+                self._parse_xfconf_perchannel_xml(
+                    xml_file=xml_file,
+                    root=elem,
+                    channel_name=channel_name,
+                    property_path=cur_property_path
+                )
                 continue
 
             # Modify the variable property_value
