@@ -42,7 +42,6 @@ setup(
     url="https://github.com/jamescherti/monitor-xfconf-changes",
     author="James Cherti",
 
-    keywords="cnfigure, xfce, xfconf, programmatically, monitor, xfconf-query",
     python_requires=">=3.6, <4",
     install_requires=['mypy', 'psutil', 'lxml'],
     scripts=["monitor-xfconf-changes"],
