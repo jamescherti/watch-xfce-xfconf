@@ -9,24 +9,11 @@ Configuring XFCE 4 programmatically is useful if you want to have the same XFCE 
 ## Author
 - [James Cherti](https://github.com/jamescherti/)
 
-## Requirements
-
-Python 3 requirements:
-- psutil
-- lxml
-- mypy
-
 ## Usage
 
-Clone the repository and enter the directory:
+Install the pip package from Github:
 ```console
-$ git clone https://github.com/jamescherti/monitor-xfconf-changes/
-$ cd monitor-xfconf-changes
-```
-
-Install the Python 3 requirements using pip:
-```console
-$ python3 -m pip install --user -r requirements.txt
+$ sudo pip install git+https://github.com/jamescherti/monitor-xfconf-changes
 ```
 
 Run xfce4-settings-manager in the background:
@@ -36,9 +23,16 @@ $ xfce4-settings-manager &
 
 Execute monitor-xfconf-changes:
 ```console
-$ python3 ./monitor-xfconf-changes
+$ monitor-xfconf-changes
 [INFO] You can start modifying XFCE 4 settings with xfce4-settings-manager. Your changes will be displayed in this terminal...
 ```
+
+## Requirements
+
+Python 3 requirements:
+- psutil
+- lxml
+- mypy
 
 ## Features
 - Parse the XML files that are in the directory: "~/.config/xfce4/xfconf/xfce-perchannel-xml/",

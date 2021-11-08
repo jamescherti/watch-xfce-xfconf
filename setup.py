@@ -31,9 +31,9 @@ CURRENT_DIRECTORY = Path(__file__).parent.resolve()
 LONG_DESCRIPTION = (CURRENT_DIRECTORY / "README.md").read_text(encoding="utf-8")
 
 setup(
-    name="monitor-xfconf-changes",
+    name="monitor_xfconf_changes",
 
-    version="1.0.0",
+    version="1.0.1",
 
     description=("A command-line tool that can help you to configure XFCE 4 "
                  "programmatically"),
@@ -44,7 +44,6 @@ setup(
 
     python_requires=">=3.6, <4",
     install_requires=['mypy', 'psutil', 'lxml'],
-    scripts=["monitor-xfconf-changes"],
 
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -65,4 +64,10 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
     ],
+
+    entry_points={
+        "console_scripts": [
+            "monitor-xfconf-changes=monitor_xfconf_changes.__init__:main",
+        ],
+    },
 )

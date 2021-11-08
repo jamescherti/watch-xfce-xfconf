@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 #
-# monitor-xfconf-settings.py
-#
 # Copyright (c) 2021 James Cherti
 # URL: https://github.com/jamescherti/monitor-xfconf-changes/
 #
@@ -41,9 +39,7 @@ to configure XFCE 4 programmatically.
 
 import os
 import signal
-import sys
 from typing import Set, Union, Any
-import time
 from pathlib import Path
 
 import psutil
@@ -52,7 +48,6 @@ from lxml import etree as ETree
 
 __author__ = "James Cherti"
 __license__ = "MIT"
-__version__ = "1.0.0"
 
 
 class XfconfError(Exception):
@@ -214,26 +209,3 @@ class Xfconf:
                     property_value=property_value
                 )
             )
-
-
-def main():
-    """The program starts here."""
-
-    print("[INFO] You can start modifying 'XFCE 4' settings with "
-          "'xfce4-settings-manager'. Your changes will be displayed in this "
-          "terminal...\n", file=sys.stderr)
-
-    try:
-        xfconf_query_list = Xfconf()
-        while True:
-            time.sleep(1)
-            delta = xfconf_query_list.diff()
-            for item in delta:
-                print(item)
-            sys.stdout.flush()
-    except KeyboardInterrupt:
-        pass
-
-
-if __name__ == '__main__':
-    main()
