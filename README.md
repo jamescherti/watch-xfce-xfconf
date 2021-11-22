@@ -7,24 +7,23 @@ You can then add the xfconf-query commands to a Shell script that you can use to
 Configuring XFCE 4 programmatically is useful if you want to have the same XFCE 4 settings on several computers.
 
 ## Author
-- [James Cherti](https://github.com/jamescherti/)
+- [James Cherti](https://www.jamescherti.com/)
 
 ## Usage
 
 Install the pip package from Github:
 ```console
-$ sudo pip install git+https://github.com/jamescherti/monitor-xfconf-changes
+sudo pip install git+https://github.com/jamescherti/monitor-xfconf-changes
 ```
 
 Run xfce4-settings-manager in the background:
 ```console
-$ xfce4-settings-manager &
+xfce4-settings-manager &
 ```
 
 Execute monitor-xfconf-changes:
 ```console
-$ monitor-xfconf-changes
-[INFO] You can start modifying XFCE 4 settings with xfce4-settings-manager. Your changes will be displayed in this terminal...
+monitor-xfconf-changes
 ```
 
 ## Requirements
