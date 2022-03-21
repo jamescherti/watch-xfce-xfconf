@@ -25,7 +25,7 @@
 """A setuptools based setup module."""
 
 from pathlib import Path
-from setuptools import setup
+from setuptools import setup, find_packages
 
 CURRENT_DIRECTORY = Path(__file__).parent.resolve()
 LONG_DESCRIPTION = (CURRENT_DIRECTORY / "README.md").read_text(encoding="utf-8")
@@ -34,6 +34,7 @@ setup(
     name="monitor_xfconf_changes",
 
     version="1.0.1",
+    packages=find_packages(),
 
     description=("A command-line tool that can help you to configure XFCE 4 "
                  "programmatically"),
@@ -67,7 +68,7 @@ setup(
 
     entry_points={
         "console_scripts": [
-            "monitor-xfconf-changes=monitor_xfconf_changes.__init__:main",
+            "monitor-xfconf-changes=monitor_xfconf_changes.__init__:monitor_xfconf_changes",
         ],
     },
 )
