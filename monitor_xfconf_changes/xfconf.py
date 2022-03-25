@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright (c) 2021 James Cherti
+# Copyright (c) James Cherti
 # URL: https://github.com/jamescherti/monitor-xfconf-changes/
 #
 # Distributed under terms of the MIT license.
