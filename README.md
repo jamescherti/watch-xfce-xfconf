@@ -1,6 +1,6 @@
-# monitor-xfconf-changes - a command-line tool that can help you to configure XFCE 4 programmatically
+# watch-xfce-xfconf - Configure XFCE programmatically!
 
-The command-line tool monitor-xfconf-changes will display the xfconf-query commands of all the Xfconf settings that are being modified by XFCE programs like xfce4-settings-manager, thunar, catfish, ristretto...
+The command-line tool `watch-xfce-xfconf` will allow you to watch and display the `xfconf-query` commands of all the XFCE 4 / Xfconf settings that are being modified by XFCE programs like xfce4-settings-manager, thunar, catfish, ristretto...
 
 You can then add the xfconf-query commands to a Shell script that you can use to configure XFCE 4 programmatically.
 
@@ -13,7 +13,7 @@ Configuring XFCE 4 programmatically is useful if you want to have the same XFCE 
 
 Install the pip package from Github:
 ```console
-sudo pip install git+https://github.com/jamescherti/monitor-xfconf-changes
+sudo pip install watch-xfce-xfconf
 ```
 
 Run xfce4-settings-manager in the background:
@@ -21,9 +21,9 @@ Run xfce4-settings-manager in the background:
 xfce4-settings-manager &
 ```
 
-Execute monitor-xfconf-changes:
+Execute watch-xfce-xfconf:
 ```console
-monitor-xfconf-changes
+watch-xfce-xfconf
 ```
 
 ## Requirements
@@ -40,5 +40,5 @@ Python 3 requirements:
 - Supported Xfconf types: uint, int, string, bool, array, double.
 
 ## Links
-- The GitHub repository of 'monitor-xfconf-changes': https://github.com/jamescherti/monitor-xfconf-changes/
+- The GitHub repository of 'watch-xfce-xfconf': https://github.com/jamescherti/watch-xfce-xfconf/
 - More information about Xfconf: https://wiki.xfce.org/releng/4.6/general-info/

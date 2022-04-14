@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # Copyright (c) James Cherti
-# URL: https://github.com/jamescherti/monitor-xfconf-changes/
+# URL: https://github.com/jamescherti/watch-xfce-xfconf/
 #
 # Distributed under terms of the MIT license.
 #
@@ -40,22 +40,21 @@ to configure XFCE 4 programmatically.
 import os
 import signal
 import sys
-from typing import Set, Union, Any
 import time
 from pathlib import Path
+from typing import Any, Set, Union
 
 import psutil
 from lxml import etree as ETree
 
 from .xfconf import Xfconf
 
-
 __author__ = "James Cherti"
 __license__ = "MIT"
 
 
-def monitor_xfconf_changes():
-    """Command line interace of 'monitor-xfconf-changes'."""
+def watch_xfce_xfconf():
+    """Command line interace of 'watch-xfce-xfconf'."""
 
     print("[INFO] You can start modifying 'XFCE 4' settings with "
           "'xfce4-settings-manager'. Your changes will be displayed in this "

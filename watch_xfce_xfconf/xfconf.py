@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # Copyright (c) James Cherti
-# URL: https://github.com/jamescherti/monitor-xfconf-changes/
+# URL: https://github.com/jamescherti/watch-xfce-xfconf/
 #
 # Distributed under terms of the MIT license.
 #
@@ -39,12 +39,11 @@ to configure XFCE 4 programmatically.
 
 import os
 import signal
-from typing import Set, Union, Any
 from pathlib import Path
+from typing import Any, Set, Union
 
 import psutil
 from lxml import etree as ETree
-
 
 __author__ = "James Cherti"
 __license__ = "MIT"

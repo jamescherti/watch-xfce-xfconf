@@ -1,27 +1,4 @@
 #!/usr/bin/env python
-#
-# Copyright (c) James Cherti
-#
-# Distributed under terms of the MIT license.
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-#
 """A setuptools based setup module."""
 
 from pathlib import Path
@@ -31,16 +8,16 @@ CURRENT_DIRECTORY = Path(__file__).parent.resolve()
 LONG_DESCRIPTION = (CURRENT_DIRECTORY / "README.md").read_text(encoding="utf-8")
 
 setup(
-    name="monitor_xfconf_changes",
+    name="watch-xfce-xfconf",
 
-    version="1.0.1",
+    version="1.0.2",
     packages=find_packages(),
 
     description=("A command-line tool that can help you to configure XFCE 4 "
                  "programmatically"),
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    url="https://github.com/jamescherti/monitor-xfconf-changes",
+    url="https://github.com/jamescherti/watch-xfce-xfconf",
     author="James Cherti",
 
     python_requires=">=3.6, <4",
@@ -68,7 +45,7 @@ setup(
 
     entry_points={
         "console_scripts": [
-            "monitor-xfconf-changes=monitor_xfconf_changes.__init__:monitor_xfconf_changes",
+            "watch-xfce-xfconf=watch_xfce_xfconf.__init__:watch_xfce_xfconf",
         ],
     },
 )
