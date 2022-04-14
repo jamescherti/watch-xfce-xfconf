@@ -6,9 +6,6 @@ You can then add the xfconf-query commands to a Shell script that you can use to
 
 Configuring XFCE 4 programmatically is useful if you want to have the same XFCE 4 settings on several computers.
 
-## Author
-- [James Cherti](https://www.jamescherti.com/)
-
 ## Usage
 
 Install the pip package from Github:
@@ -26,12 +23,8 @@ Execute watch-xfce-xfconf:
 watch-xfce-xfconf
 ```
 
-## Requirements
-
-Python 3 requirements:
-- psutil
-- lxml
-- mypy
+## Author
+- [James Cherti](https://www.jamescherti.com/)
 
 ## Features
 - Parse the XML files that are in the directory: "~/.config/xfce4/xfconf/xfce-perchannel-xml/",
@@ -40,5 +33,6 @@ Python 3 requirements:
 - Supported Xfconf types: uint, int, string, bool, array, double.
 
 ## Links
-- The GitHub repository of 'watch-xfce-xfconf': https://github.com/jamescherti/watch-xfce-xfconf/
-- More information about Xfconf: https://wiki.xfce.org/releng/4.6/general-info/
+- [watch-xfce-xfconf @PyPI](https://pypi.org/project/watch-xfce-xfconf/)
+- [watch-xfce-xfconf @GitHub](https://github.com/jamescherti/watch-xfce-xfconf/)
+- [General information about Xfconf](https://wiki.xfce.org/releng/4.6/general-info#xfconf)
