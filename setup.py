@@ -5,12 +5,13 @@ from pathlib import Path
 from setuptools import setup, find_packages
 
 CURRENT_DIRECTORY = Path(__file__).parent.resolve()
-LONG_DESCRIPTION = (CURRENT_DIRECTORY / "README.md").read_text(encoding="utf-8")
+LONG_DESCRIPTION = \
+    (CURRENT_DIRECTORY / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="watch-xfce-xfconf",
 
-    version="1.0.2",
+    version="1.0.3",
     packages=find_packages(),
 
     description=("A command-line tool that can help you to configure XFCE 4 "
