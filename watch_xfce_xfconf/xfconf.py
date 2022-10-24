@@ -23,9 +23,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-# --
-# pylint: disable=invalid-name
-#
 """This command-line tool will help you to configure XFCE 4 programmatically.
 
 It will display the xfconf-query commands of all the Xfconf settings that
@@ -41,6 +38,7 @@ import os
 import signal
 from pathlib import Path
 from typing import Any, Set, Union
+import pwd
 
 import psutil
 from lxml import etree as ETree
@@ -87,11 +85,13 @@ class Xfconf:
     @staticmethod
     def reload_xfconfd():
         """Reload the process 'xfconfd'."""
+        current_user = pwd.getpwuid(os.getuid()).pw_name
         for proc in psutil.process_iter():
             try:
                 if proc.name() == "xfconfd":
-                    # reload the process
-                    os.kill(proc.pid, signal.SIGHUP)
+                    if proc.username() == current_user:
+                        # reload the process
+                        os.kill(proc.pid, signal.SIGHUP)
             except psutil.Error:
                 pass
 
