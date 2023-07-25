@@ -22,7 +22,7 @@ setup(
     author="James Cherti",
 
     python_requires=">=3.6, <4",
-    install_requires=['mypy', 'psutil', 'lxml'],
+    install_requires=['psutil', 'lxml'],
 
     classifiers=[
         "Development Status :: 5 - Production/Stable",
