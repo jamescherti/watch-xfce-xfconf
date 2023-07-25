@@ -11,7 +11,7 @@ LONG_DESCRIPTION = \
 setup(
     name="watch-xfce-xfconf",
 
-    version="1.0.3",
+    version="1.0.4",
     packages=find_packages(),
 
     description=("A command-line tool that can help you to configure XFCE 4 "
