@@ -62,4 +62,4 @@ quick and efficient automation of XFCE 4 configuration across multiple machines.
 ## Links
 - [watch-xfce-xfconf @PyPI](https://pypi.org/project/watch-xfce-xfconf/)
 - [watch-xfce-xfconf @GitHub](https://github.com/jamescherti/watch-xfce-xfconf/)
-- [General information about Xfconf](https://wiki.xfce.org/releng/4.6/general-info#xfconf)
+- [General information about Xfconf](https://docs.xfce.org/xfce/xfconf/start)
