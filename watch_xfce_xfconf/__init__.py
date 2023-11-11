@@ -37,10 +37,10 @@ __license__ = "MIT"
 def watch_xfce_xfconf():
     """Command line interace of 'watch-xfce-xfconf'."""
 
-    print("#!#!/usr/bin/env sh")
+    print("#!/usr/bin/env sh")
     print("# You can start modifying 'XFCE 4' settings with "
           "'xfce4-settings-manager'. Your")
-    print("# changes will be displayed...\n", file=sys.stderr)
+    print("# changes will be displayed...\n")
 
     try:
         xfconf_query_list = Xfconf()
