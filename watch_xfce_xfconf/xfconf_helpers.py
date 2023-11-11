@@ -25,30 +25,26 @@
 #
 """This command-line tool will help you configure XFCE 4 programmatically."""
 
-import sys
-import time
+import os
+import pwd
+import signal
 
-from .xfconf import Xfconf
-
-__author__ = "James Cherti"
-__license__ = "MIT"
+import psutil
 
 
-def watch_xfce_xfconf():
-    """Command line interace of 'watch-xfce-xfconf'."""
+def quote_command(command: str) -> str:
+    """Quote a command and escape the special characters."""
+    return "'{}'".format(command.replace("'", "'\\''"))
 
-    print("#!#!/usr/bin/env sh")
-    print("# You can start modifying 'XFCE 4' settings with "
-          "'xfce4-settings-manager'. Your")
-    print("# changes will be displayed...\n", file=sys.stderr)
 
-    try:
-        xfconf_query_list = Xfconf()
-        while True:
-            time.sleep(1)
-            delta = xfconf_query_list.diff()
-            for item in delta:
-                print(item)
-            sys.stdout.flush()
-    except KeyboardInterrupt:
-        pass
+def reload_xfconfd():
+    """Reload the process 'xfconfd'."""
+    current_user = pwd.getpwuid(os.getuid()).pw_name
+    for proc in psutil.process_iter():
+        try:
+            if proc.name() == "xfconfd":
+                if proc.username() == current_user:
+                    # reload the process
+                    os.kill(proc.pid, signal.SIGHUP)
+        except psutil.Error:
+            pass

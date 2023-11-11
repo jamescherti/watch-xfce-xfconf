@@ -25,30 +25,34 @@
 #
 """This command-line tool will help you configure XFCE 4 programmatically."""
 
-import sys
-import time
-
-from .xfconf import Xfconf
+from typing import Union
 
 __author__ = "James Cherti"
 __license__ = "MIT"
 
 
-def watch_xfce_xfconf():
-    """Command line interace of 'watch-xfce-xfconf'."""
+class XfconfError(Exception):
+    """Exception raised by the class Xfconf() or its children."""
 
-    print("#!#!/usr/bin/env sh")
-    print("# You can start modifying 'XFCE 4' settings with "
-          "'xfce4-settings-manager'. Your")
-    print("# changes will be displayed...\n", file=sys.stderr)
 
-    try:
-        xfconf_query_list = Xfconf()
-        while True:
-            time.sleep(1)
-            delta = xfconf_query_list.diff()
-            for item in delta:
-                print(item)
-            sys.stdout.flush()
-    except KeyboardInterrupt:
-        pass
+class XfconfItem:
+    """Xfconf item."""
+
+    def __init__(self,
+                 channel: str,
+                 property_path: str,
+                 property_type: str,
+                 property_value: Union[str, list]):
+        """Init the class."""
+        self.channel = channel
+        self.property_path = property_path
+        self.property_type = property_type
+        self.property_value = property_value
+
+    def __repr__(self) -> str:
+        """Object representation in string format."""
+        result = "{}{} : {} = {}".format(self.channel,
+                                         self.property_path,
+                                         self.property_type,
+                                         self.property_value)
+        return result

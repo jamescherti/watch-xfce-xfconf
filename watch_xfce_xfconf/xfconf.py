@@ -23,88 +23,36 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-"""This command-line tool will help you to configure XFCE 4 programmatically.
+"""This command-line tool will help you configure XFCE 4 programmatically."""
 
-It will display the xfconf-query commands of all the Xfconf settings that
-are bring modified by xfce4-settings-manager (or by any other software that
-modifies Xfconf like Thunar, Catfish, Ristretto...).
-
-You can then add the xfconf-query commands to a Shell script that you can use
-to configure XFCE 4 programmatically.
-
-"""
-
-import os
-import signal
 from pathlib import Path
-from typing import Any, Set, Union
-import pwd
+from typing import Any, Set
 
-import psutil
+# pylint: disable=c-extension-no-member
 from lxml import etree as ETree
+
+from .xfconf_helpers import quote_command, reload_xfconfd
+from .xfconf_item import XfconfError, XfconfItem
 
 __author__ = "James Cherti"
 __license__ = "MIT"
 
 
-class XfconfError(Exception):
-    """Exception raised by the class Xfconf() or its children."""
-
-
-class XfconfItem:
-    """Xfconf item."""
-
-    def __init__(self,
-                 channel: str,
-                 property_path: str,
-                 property_type: str,
-                 property_value: Union[str, list]):
-        """Init the class."""
-        self.channel = channel
-        self.property_path = property_path
-        self.property_type = property_type
-        self.property_value = property_value
-
-    def __repr__(self) -> str:
-        """Object representation in string format."""
-        result = "{}{} : {} = {}".format(self.channel,
-                                         self.property_path,
-                                         self.property_type,
-                                         self.property_value)
-        return result
-
-
 class Xfconf:
     """Load Xfconf settings."""
 
-    @staticmethod
-    def escape_command(command: str) -> str:
-        """Quote a command."""
-        return "'{}'".format(command.replace("'", "'\\''"))
-
-    @staticmethod
-    def reload_xfconfd():
-        """Reload the process 'xfconfd'."""
-        current_user = pwd.getpwuid(os.getuid()).pw_name
-        for proc in psutil.process_iter():
-            try:
-                if proc.name() == "xfconfd":
-                    if proc.username() == current_user:
-                        # reload the process
-                        os.kill(proc.pid, signal.SIGHUP)
-            except psutil.Error:
-                pass
-
     def __init__(self):
         """Load Xfconf settings."""
-        self.xfconf_items: set = set()
-        dir_xfconf = Path("~/.config/xfce4/xfconf/xfce-perchannel-xml")
-        for xml_file in dir_xfconf.expanduser().glob("*.xml"):
+        self.xfconf_items = set()
+        dir_xfconf = \
+            Path("~/.config/xfce4/xfconf/xfce-perchannel-xml").expanduser()
+
+        for xml_file in dir_xfconf.glob("*.xml"):
             self._parse_xfconf_perchannel_xml(str(xml_file))
 
     def diff(self) -> Set[str]:
         """Return the settings that have been changed."""
-        Xfconf.reload_xfconfd()
+        reload_xfconfd()
 
         new_xfce_config = Xfconf()
 
@@ -125,21 +73,21 @@ class Xfconf:
         for item in self:
             cmd = "{} --create -c {} -p {}" \
                 .format("xfconf-query",
-                        self.escape_command(item.channel),
-                        self.escape_command(item.property_path))
+                        quote_command(item.channel),
+                        quote_command(item.property_path))
 
             if item.property_type == "array":
                 for array_item_type, array_item_value in item.property_value:
-                    cmd =  "{} --type {} --set {}".format(
+                    cmd = "{} --type {} --set {}".format(
                         cmd,
-                        self.escape_command(array_item_type),
-                        self.escape_command(array_item_value)
+                        quote_command(array_item_type),
+                        quote_command(array_item_value)
                     )
             else:
-                cmd =  "{} --type {} --set {}".format(
+                cmd = "{} --type {} --set {}".format(
                     cmd,
-                    self.escape_command(item.property_type),
-                    self.escape_command(str(item.property_value))
+                    quote_command(item.property_type),
+                    quote_command(str(item.property_value))
                 )
 
             commands.append(cmd)
