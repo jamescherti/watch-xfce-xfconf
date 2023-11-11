@@ -30,9 +30,10 @@ several benefits:
 
 ## Installation
 
-Install the watch-xfce-xfconf pip package:
+The watch-xfce-xfconf command-line tool can be installed locally,
+in `~/.local/bin/watch-xfce-xfconf`, using pip:
 ```console
-sudo pip install watch-xfce-xfconf
+pip install --user watch-xfce-xfconf
 ```
 
 ## Usage
@@ -44,7 +45,7 @@ xfce4-settings-manager &
 
 After that, execute watch-xfce-xfconf:
 ```console
-watch-xfce-xfconf
+~/.local/bin/watch-xfce-xfconf
 ```
 
 Once you begin modifying XFCE 4 settings using xfce4-settings-manager, `watch-xfce-xfconf`
