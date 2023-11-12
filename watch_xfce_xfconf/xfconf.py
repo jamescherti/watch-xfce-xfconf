@@ -118,13 +118,13 @@ class Xfconf:
             cur_property_path = "{}/{}".format(property_path,
                                                elem.attrib.get("name").strip())
 
-            if property_type not in ["empty", "uint", "int", "string", "bool",
-                                     "array", "double"]:
-                err_str = ("the type '{}' of '{}{}' is not supported. "
-                           "XML file: '{}'") \
-                    .format(property_type, channel_name, cur_property_path,
-                            xml_file)
-                raise XfconfError(err_str)
+            # if property_type not in ["empty", "uint", "uint64", "int",
+            #                          "string", "bool", "array", "double"]:
+            #     err_str = ("the type '{}' of '{}{}' is not supported. "
+            #                "XML file: '{}'") \
+            #         .format(property_type, channel_name, cur_property_path,
+            #                 xml_file)
+            #     raise XfconfError(err_str)
 
             # 'empty' = contains sub items
             if property_type == "empty":
