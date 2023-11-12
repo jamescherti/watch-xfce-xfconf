@@ -64,6 +64,7 @@ MIT license.
 - Monitors changes in XFCE 4 settings / Xfconf,
 - Displays xfconf-query commands with correctly escaped special characters in their
   arguments.
+- Reloads Xfconf when it is necessary.
 
 ## Links
 - [watch-xfce-xfconf @PyPI](https://pypi.org/project/watch-xfce-xfconf/)
