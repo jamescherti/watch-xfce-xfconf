@@ -2,7 +2,8 @@
 """A setuptools based setup module."""
 
 from pathlib import Path
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 CURRENT_DIRECTORY = Path(__file__).parent.resolve()
 LONG_DESCRIPTION = \
@@ -11,7 +12,7 @@ LONG_DESCRIPTION = \
 setup(
     name="watch-xfce-xfconf",
 
-    version="1.0.4",
+    version="1.0.5",
     packages=find_packages(),
 
     description=("A command-line tool that can help you to configure XFCE 4 "
