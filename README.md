@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The command-line tool `watch-xfce-xfconf` allows displaying and watching the xfconf-query
+The `watch-xfce-xfconf` command-line tool allows displaying and watching the xfconf-query
 commands of all the XFCE 4 Xfconf settings that are being changed by XFCE programs like
 xfce4-settings-manager, thunar, catfish, ristretto, among others.
 
