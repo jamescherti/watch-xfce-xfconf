@@ -2,13 +2,12 @@
 
 ## Introduction
 
-The command-line tool `watch-xfce-xfconf`, written by
-[James Cherti](https://www.jamescherti.com/), allows displaying and watching the
-xfconf-query commands of all the XFCE 4 Xfconf settings that are being changed by XFCE
-programs like xfce4-settings-manager, thunar, catfish, ristretto, among others.
+The command-line tool `watch-xfce-xfconf` allows displaying and watching the xfconf-query
+commands of all the XFCE 4 Xfconf settings that are being changed by XFCE programs like
+xfce4-settings-manager, thunar, catfish, ristretto, among others.
 
-The `watch-xfce-xfconf` command-line tool is especially useful for users who want to
-replicate XFCE 4 settings on several computers.
+The `watch-xfce-xfconf` tool is especially useful for users who want to replicate XFCE 4
+settings on several computers.
 
 ### What is xfconf-query?
 
@@ -53,12 +52,18 @@ will automatically display the corresponding xfconf-query commands in the termin
 xfconf-query commands can be easily copied and pasted into a Shell script, allowing for
 quick and efficient automation of XFCE 4 configuration across multiple machines.
 
+## Author and License
+
+The `watch-xfce-xfconf` tool has been written by
+[James Cherti](https://www.jamescherti.com/) and is distributed under terms of the
+MIT license.
+
 ## Features
 - Parses XML files that are located in the directory:
   `~/.config/xfce4/xfconf/xfce-perchannel-xml/`,
 - Monitors changes in XFCE 4 settings / Xfconf,
-- Displays xfconf-query commands,
-- Supports the following Xfconf types: uint, int, string, bool, array, double.
+- Displays xfconf-query commands with correctly escaped special characters in their
+  arguments.
 
 ## Links
 - [watch-xfce-xfconf @PyPI](https://pypi.org/project/watch-xfce-xfconf/)
