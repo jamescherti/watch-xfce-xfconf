@@ -1,4 +1,5 @@
 # watch-xfce-xfconf - Automate XFCE Configuration!
+![License](https://img.shields.io/github/license/jamescherti/watch-xfce-xfconf)
 
 ## Introduction
 
