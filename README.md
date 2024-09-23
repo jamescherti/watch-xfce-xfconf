@@ -10,7 +10,7 @@ By displaying the xfconf-query commands, `watch-xfce-xfconf` allows to easily cr
 - It reduces the risk of errors and inconsistencies that may arise from manually configuring settings on different machines,
 - Finally, it allows focusing on other important tasks rather than spending time configuring XFCE 4 manually.
 
-The `watch-xfce-xfconf` tool is especially useful for users who want to replicate XFCE 4 settings on several computers.
+The `watch-xfce-xfconf` tool is particularly useful for users who want to replicate XFCE 4 settings across different users or computers.
 
 ## Installation
 
