@@ -3,7 +3,7 @@
 
 ## Introduction
 
-The `watch-xfce-xfconf` command-line tool that can be used to configure XFCE 4 programmatically using the `xfconf-query` commands displayed when XFCE 4 settings are modified (e.g., settings like xfce4-settings-manager, thunar, catfish, ristretto, among others).
+The `watch-xfce-xfconf` command-line tool can be used to configure XFCE 4 programmatically. It displays the `xfconf-query` commands generated when XFCE 4 settings are modified, including settings for applications such as xfce4-settings-manager, Thunar, Catfish, Ristretto, and more.
 
 The xfconf-query commands displayed by `watch-xfce-xfconf` allow modifying and creating XFCE 4 Xfconf settings, such as the desktop background, panel preferences, window decorations, window manager settings, and more.
 
