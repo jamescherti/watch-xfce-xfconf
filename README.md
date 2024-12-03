@@ -12,6 +12,8 @@ By displaying the xfconf-query commands, `watch-xfce-xfconf` allows to easily cr
 
 The `watch-xfce-xfconf` tool is particularly useful for users who want to replicate XFCE 4 settings across different users or computers.
 
+**Here is an example of an XFCE customization script created with the help of watch-xfce-xfconf: [jc-xfce-settings @GitHub](https://github.com/jamescherti/jc-xfce-settings).**
+
 ## Installation
 
 The watch-xfce-xfconf command-line tool can be installed locally, in `~/.local/bin/watch-xfce-xfconf`, using pip:
