@@ -18,10 +18,12 @@ The `watch-xfce-xfconf` tool is particularly useful for users who want to replic
 
 ## Installation
 
-The watch-xfce-xfconf command-line tool can be installed locally, in `~/.local/bin/watch-xfce-xfconf`, using [pip](https://pypi.org/project/pip/):
+To install the *watch-xfce-xfconf* executable locally in `~/.local/bin/watch-xfce-xfconf` using [pip](https://pypi.org/project/pip/), run:
 ```console
 pip install --user watch-xfce-xfconf
 ```
+
+(Omitting the `--user` flag will install *watch-xfce-xfconf* system-wide in `/usr/local/bin/watch-xfce-xfconf`.)
 
 ## Usage
 
