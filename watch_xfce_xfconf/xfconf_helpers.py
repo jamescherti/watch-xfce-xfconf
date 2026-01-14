@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright (C) 2021-2025 James Cherti
+# Copyright (C) 2021-2026 James Cherti
 # URL: https://github.com/jamescherti/watch-xfce-xfconf/
 #
 # Distributed under terms of the MIT license.
