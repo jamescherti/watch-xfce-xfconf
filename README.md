@@ -16,6 +16,8 @@ The `watch-xfce-xfconf` tool is particularly useful for users who want to replic
 
 **Here is an example of an XFCE customization script created with the help of watch-xfce-xfconf: [jc-xfce-settings @GitHub](https://github.com/jamescherti/jc-xfce-settings).**
 
+If *watch-xfce-xfconf* enhances your workflow, please show your support by **⭐ starring watch-xfce-xfconf on GitHub** to help more users discover its benefits.
+
 ## Installation
 
 To install the *watch-xfce-xfconf* executable locally in `~/.local/bin/watch-xfce-xfconf` using [pip](https://pypi.org/project/pip/), run:
