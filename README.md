@@ -1,9 +1,7 @@
 # watch-xfce-xfconf - Automate XFCE Configuration!
 ![License](https://img.shields.io/github/license/jamescherti/watch-xfce-xfconf)
 
-## Introduction
-
-The `watch-xfce-xfconf` command-line tool observes and reproduces XFCE 4 configuration changes. It monitors XFCE settings in real time and prints the corresponding `xfconf-query` commands whenever a setting is modified through the graphical interface.
+The `watch-xfce-xfconf` monitors XFCE settings in real time and prints the corresponding `xfconf-query` commands whenever a setting is modified through the graphical interface.
 
 Configuration changes performed in components such as `xfce4-settings-manager`, Thunar, Catfish, Ristretto, and other XFCE applications are translated into explicit `xfconf-query` commands. These commands reveal how XFCE 4 persists and applies configuration at the Xfconf layer.
 
