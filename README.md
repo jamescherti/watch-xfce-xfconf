@@ -1,4 +1,4 @@
-# watch-xfce-xfconf - Automate XFCE Configuration!
+# watch-xfce-xfconf - XFCE 4 Configuration as Code
 ![License](https://img.shields.io/github/license/jamescherti/watch-xfce-xfconf)
 
 The `watch-xfce-xfconf` monitors XFCE settings in real time and prints the corresponding `xfconf-query` commands whenever a setting is modified through the graphical interface.
