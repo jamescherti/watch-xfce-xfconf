@@ -3,16 +3,18 @@
 
 ## Introduction
 
-The `watch-xfce-xfconf` command-line tool can be used to configure XFCE 4 programmatically. It displays the `xfconf-query` commands generated when XFCE 4 settings are modified, including settings for applications such as xfce4-settings-manager, Thunar, Catfish, Ristretto, and more.
+The `watch-xfce-xfconf` command-line tool observes and reproduces XFCE 4 configuration changes. It monitors XFCE settings in real time and prints the corresponding `xfconf-query` commands whenever a setting is modified through the graphical interface.
 
-The xfconf-query commands displayed by `watch-xfce-xfconf` allow modifying and creating XFCE 4 Xfconf settings, such as the desktop background, panel preferences, window decorations, window manager settings, and more.
+Configuration changes performed in components such as `xfce4-settings-manager`, Thunar, Catfish, Ristretto, and other XFCE applications are translated into explicit `xfconf-query` commands. These commands reveal how XFCE 4 persists and applies configuration at the Xfconf layer.
+
+The generated commands can be reused to modify or create XFCE 4 settings programmatically, including desktop backgrounds, panel layouts, window decorations, window manager behavior, and related preferences.
 
 By displaying the xfconf-query commands, `watch-xfce-xfconf` allows to easily create a Shell script that can be used to automate the configuration of XFCE 4, which provides several benefits:
 - It saves time and effort by eliminating the need to manually adjust settings on each individual machine,
 - It reduces the risk of errors and inconsistencies that may arise from manually configuring settings on different machines,
 - Finally, it allows focusing on other important tasks rather than spending time configuring XFCE 4 manually.
 
-The `watch-xfce-xfconf` tool is particularly useful for users who want to replicate XFCE 4 settings across different users or computers.
+The `watch-xfce-xfconf` tool is useful for users who want to replicate XFCE 4 settings across different users or computers.
 
 **Here is an example of an XFCE customization script created with the help of watch-xfce-xfconf: [jc-xfce-settings @GitHub](https://github.com/jamescherti/jc-xfce-settings).**
 
