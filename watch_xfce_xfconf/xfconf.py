@@ -44,8 +44,7 @@ class Xfconf:
     def __init__(self):
         """Load Xfconf settings."""
         self.xfconf_items = set()
-        dir_xfconf = \
-            Path("~/.config/xfce4/xfconf/xfce-perchannel-xml").expanduser()
+        dir_xfconf = Path("~/.config/xfce4/xfconf/xfce-perchannel-xml").expanduser()
 
         for xml_file in dir_xfconf.glob("*.xml"):
             self._parse_xfconf_perchannel_xml(str(xml_file))
@@ -71,42 +70,44 @@ class Xfconf:
         commands = []
 
         for item in self:
-            cmd = "{} --create -c {} -p {}" \
-                .format("xfconf-query",
-                        quote_command(item.channel),
-                        quote_command(item.property_path))
+            cmd = "{} --create -c {} -p {}".format(
+                "xfconf-query",
+                quote_command(item.channel),
+                quote_command(item.property_path),
+            )
 
             if item.property_type == "array":
                 for array_item_type, array_item_value in item.property_value:
                     cmd = "{} --type {} --set {}".format(
                         cmd,
                         quote_command(array_item_type),
-                        quote_command(array_item_value)
+                        quote_command(array_item_value),
                     )
             else:
                 cmd = "{} --type {} --set {}".format(
                     cmd,
                     quote_command(item.property_type),
-                    quote_command(str(item.property_value))
+                    quote_command(str(item.property_value)),
                 )
 
             commands.append(cmd)
 
         return "{}\n".format("\n".join(commands))
 
-    def _parse_xfconf_perchannel_xml(self,
-                                     xml_file: str,
-                                     root: Any = None,
-                                     channel_name: str = "",
-                                     property_path: str = ""):
+    def _parse_xfconf_perchannel_xml(
+        self,
+        xml_file: str,
+        root: Any = None,
+        channel_name: str = "",
+        property_path: str = "",
+    ):
         """Parse the Xfconf XML."""
         if root is None:
             tree = ETree.parse(xml_file)
             root = tree.getroot()
 
             channel_name = root.attrib.get("name")
-            if root.attrib.get("version") != "1.0" \
-                    or root.tag.lower() != "channel":
+            if root.attrib.get("version") != "1.0" or root.tag.lower() != "channel":
                 err_str = ("invalid XML file: '{}'").format(xml_file)
                 raise XfconfError(err_str)
 
@@ -115,8 +116,9 @@ class Xfconf:
                 continue
 
             property_type = elem.attrib.get("type").strip().lower()
-            cur_property_path = "{}/{}".format(property_path,
-                                               elem.attrib.get("name").strip())
+            cur_property_path = "{}/{}".format(
+                property_path, elem.attrib.get("name").strip()
+            )
 
             # if property_type not in ["empty", "uint", "uint64", "int",
             #                          "string", "bool", "array", "double"]:
@@ -132,7 +134,7 @@ class Xfconf:
                     xml_file=xml_file,
                     root=elem,
                     channel_name=channel_name,
-                    property_path=cur_property_path
+                    property_path=cur_property_path,
                 )
                 continue
 
@@ -153,6 +155,6 @@ class Xfconf:
                     channel=channel_name,
                     property_path=cur_property_path,
                     property_type=property_type,
-                    property_value=property_value
+                    property_value=property_value,
                 )
             )

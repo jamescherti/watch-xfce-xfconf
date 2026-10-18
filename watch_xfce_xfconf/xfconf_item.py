@@ -38,11 +38,13 @@ class XfconfError(Exception):
 class XfconfItem:
     """Xfconf item."""
 
-    def __init__(self,
-                 channel: str,
-                 property_path: str,
-                 property_type: str,
-                 property_value: Union[str, list]):
+    def __init__(
+        self,
+        channel: str,
+        property_path: str,
+        property_type: str,
+        property_value: Union[str, list],
+    ):
         """Init the class."""
         self.channel = channel
         self.property_path = property_path
@@ -51,8 +53,7 @@ class XfconfItem:
 
     def __repr__(self) -> str:
         """Object representation in string format."""
-        result = "{}{} : {} = {}".format(self.channel,
-                                         self.property_path,
-                                         self.property_type,
-                                         self.property_value)
+        result = "{}{} : {} = {}".format(
+            self.channel, self.property_path, self.property_type, self.property_value
+        )
         return result

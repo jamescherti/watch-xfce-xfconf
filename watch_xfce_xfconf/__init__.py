@@ -38,8 +38,10 @@ def watch_xfce_xfconf():
     """Command line interace of 'watch-xfce-xfconf'."""
 
     print("#!/usr/bin/env sh")
-    print("# You can start modifying 'XFCE 4' settings with "
-          "'xfce4-settings-manager'. Your")
+    print(
+        "# You can start modifying 'XFCE 4' settings with "
+        "'xfce4-settings-manager'. Your"
+    )
     print("# changes will be displayed...\n")
 
     try:
