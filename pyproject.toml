@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "watch-xfce-xfconf"
+version = "1.0.5"
+description = "A command-line tool that can help you to configure XFCE 4 programmatically"
+readme = "README.md"
+authors = [
+  { name = "James Cherti" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.6, <4"
+dependencies = [
+  "psutil",
+  "lxml",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Environment :: X11 Applications",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: POSIX :: Other",
+  "Topic :: Desktop Environment :: Window Managers :: XFCE",
+  "Topic :: Desktop Environment :: Window Managers",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+]
+
+[project.urls]
+Homepage = "https://github.com/jamescherti/watch-xfce-xfconf"
+Repository = "https://github.com/jamescherti/watch-xfce-xfconf"
+
+[project.scripts]
+watch-xfce-xfconf = "watch_xfce_xfconf:watch_xfce_xfconf"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["watch_xfce_xfconf*"]
