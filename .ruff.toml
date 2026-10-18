@@ -1,0 +1,33 @@
+target-version = "py310"
+line-length = 88
+
+[lint]
+select = [
+  "E",   # pycodestyle errors
+  "W",   # pycodestyle warnings
+  "F",   # pyflakes
+  "I",   # isort
+  "B",   # flake8-bugbear
+  "UP",  # pyupgrade
+  "D",   # pydocstyle
+  "PTH", # flake8-use-pathlib
+  "C4",  # flake8-comprehensions
+  "SIM", # flake8-simplify
+  "RUF", # Ruff-specific rules
+  "PL",  # Pylint rules
+]
+
+ignore = [
+  "ISC001", # Prevent conflicts with the Ruff formatter
+  "PLW2901", # `for` loop variable `pattern` overwritten by assignment target
+  "PLR0915", # PLR0915 Too many statements
+  "PLR0912", # PLR0912 Too many branches
+]
+
+# unfixable = [
+#   "F401",   # Prevent auto-fixer from deleting unused imports during development
+#   "F841",   # Prevent auto-fixer from deleting unused variables during development
+# ]
+
+[lint.pydocstyle]
+convention = "pep257"

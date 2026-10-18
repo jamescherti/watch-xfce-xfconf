@@ -1,0 +1,57 @@
+[MAIN]
+ignore=CVS,.git,__pycache__,.venv,venv
+persistent=yes
+jobs=0
+py-version=3.10
+load-plugins=
+    pylint.extensions.bad_builtin,
+    pylint.extensions.code_style,
+    pylint.extensions.typing,
+    pylint.extensions.docparams,
+    pylint.extensions.set_membership,
+    pylint.extensions.overlapping_exceptions,
+    pylint.extensions.broad_try_clause,
+    pylint.extensions.dict_init_mutate
+
+[MESSAGES CONTROL]
+enable=
+    use-symbolic-message-instead,
+    useless-suppression
+
+disable=
+    format,
+    invalid-name,
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    too-few-public-methods,
+    protected-access,
+    fixme,
+    consider-using-assignment-expr,
+    line-too-long,
+    too-many-try-statements,
+    too-many-statements,
+    too-many-branches
+
+[REPORTS]
+output-format=text
+reports=no
+score=yes
+
+[BASIC]
+good-names=i,j,k,ex,Run,_,fd,fp,id
+
+[DESIGN]
+max-args=9
+max-locals=19
+max-returns=11
+max-branches=20
+max-statements=50
+max-attributes=11
+
+[TYPECHECK]
+ignored-classes=optparse.Values,thread._local,_thread._local,argparse.Namespace
+generated-members=REQUEST,acl_users,aq_parent
+
+[TYPING]
+runtime-typing=no
