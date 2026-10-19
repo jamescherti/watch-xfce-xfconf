@@ -36,7 +36,6 @@ __license__ = "MIT"
 
 def watch_xfce_xfconf():
     """Command line interace of 'watch-xfce-xfconf'."""
-
     print("#!/usr/bin/env sh")
     print(
         "# You can start modifying 'XFCE 4' settings with "

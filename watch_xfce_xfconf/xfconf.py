@@ -26,7 +26,7 @@
 """This command-line tool will help you configure XFCE 4 programmatically."""
 
 from pathlib import Path
-from typing import Any, Set
+from typing import Any
 
 # pylint: disable=c-extension-no-member
 from lxml import etree as ETree
@@ -49,7 +49,7 @@ class Xfconf:
         for xml_file in dir_xfconf.glob("*.xml"):
             self._parse_xfconf_perchannel_xml(str(xml_file))
 
-    def diff(self) -> Set[str]:
+    def diff(self) -> set[str]:
         """Return the settings that have been changed."""
         reload_xfconfd()
 
@@ -78,17 +78,9 @@ class Xfconf:
 
             if item.property_type == "array":
                 for array_item_type, array_item_value in item.property_value:
-                    cmd = "{} --type {} --set {}".format(
-                        cmd,
-                        quote_command(array_item_type),
-                        quote_command(array_item_value),
-                    )
+                    cmd = f"{cmd} --type {quote_command(array_item_type)} --set {quote_command(array_item_value)}"
             else:
-                cmd = "{} --type {} --set {}".format(
-                    cmd,
-                    quote_command(item.property_type),
-                    quote_command(str(item.property_value)),
-                )
+                cmd = f"{cmd} --type {quote_command(item.property_type)} --set {quote_command(str(item.property_value))}"
 
             commands.append(cmd)
 
@@ -108,7 +100,7 @@ class Xfconf:
 
             channel_name = root.attrib.get("name")
             if root.attrib.get("version") != "1.0" or root.tag.lower() != "channel":
-                err_str = ("invalid XML file: '{}'").format(xml_file)
+                err_str = (f"invalid XML file: '{xml_file}'")
                 raise XfconfError(err_str)
 
         for elem in root.getchildren():

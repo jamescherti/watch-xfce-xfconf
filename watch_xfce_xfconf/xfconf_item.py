@@ -25,7 +25,6 @@
 #
 """This command-line tool will help you configure XFCE 4 programmatically."""
 
-from typing import Union
 
 __author__ = "James Cherti"
 __license__ = "MIT"
@@ -43,7 +42,7 @@ class XfconfItem:
         channel: str,
         property_path: str,
         property_type: str,
-        property_value: Union[str, list],
+        property_value: str | list,
     ):
         """Init the class."""
         self.channel = channel
@@ -53,7 +52,5 @@ class XfconfItem:
 
     def __repr__(self) -> str:
         """Object representation in string format."""
-        result = "{}{} : {} = {}".format(
-            self.channel, self.property_path, self.property_type, self.property_value
-        )
+        result = f"{self.channel}{self.property_path} : {self.property_type} = {self.property_value}"
         return result
