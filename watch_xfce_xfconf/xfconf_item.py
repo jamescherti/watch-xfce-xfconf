@@ -25,7 +25,6 @@
 #
 """This command-line tool will help you configure XFCE 4 programmatically."""
 
-
 __author__ = "James Cherti"
 __license__ = "MIT"
 

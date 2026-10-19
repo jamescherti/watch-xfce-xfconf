@@ -100,7 +100,7 @@ class Xfconf:
 
             channel_name = root.attrib.get("name")
             if root.attrib.get("version") != "1.0" or root.tag.lower() != "channel":
-                err_str = (f"invalid XML file: '{xml_file}'")
+                err_str = f"invalid XML file: '{xml_file}'"
                 raise XfconfError(err_str)
 
         for elem in root.getchildren():
