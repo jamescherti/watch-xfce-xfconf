@@ -19,15 +19,18 @@ select = [
 
 ignore = [
   "ISC001", # Prevent conflicts with the Ruff formatter
-  "PLW2901", # `for` loop variable `pattern` overwritten by assignment target
-  "PLR0915", # PLR0915 Too many statements
-  "PLR0912", # PLR0912 Too many branches
+  "PLW2901", # For loop variable pattern overwritten by assignment target
+  "PLR0915", # Too many statements
+  "PLR0912", # Too many branches
+  "PLR0911", # Too many return statements
 ]
 
-# unfixable = [
-#   "F401",   # Prevent auto-fixer from deleting unused imports during development
-#   "F841",   # Prevent auto-fixer from deleting unused variables during development
-# ]
+fixable = ["ALL"]
+unfixable = []
 
 [lint.pydocstyle]
 convention = "pep257"
+
+[format]
+quote-style = "double"
+indent-style = "space"
