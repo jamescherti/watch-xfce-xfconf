@@ -2,7 +2,7 @@
 ![License](https://img.shields.io/github/license/jamescherti/watch-xfce-xfconf)
 
 - Author: James Cherti <[https://www.jamescherti.com/](https://www.jamescherti.com/)>
-- License: GPL
+- License: MIT
 
 The **[watch-xfce-xfconf](https://github.com/jamescherti/watch-xfce-xfconf/)** monitors XFCE settings in real time and prints the corresponding `xfconf-query` commands whenever a setting is modified through the graphical interface.
 
