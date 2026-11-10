@@ -107,10 +107,16 @@ class Xfconf:
             if elem.tag.title().lower() != "property":
                 continue
 
-            property_type = elem.attrib.get("type").strip().lower()
-            cur_property_path = "{}/{}".format(
-                property_path, elem.attrib.get("name").strip()
-            )
+            property_name = elem.attrib.get("name")
+            property_type = elem.attrib.get("type")
+            if not property_name or not property_type:
+                err_str = (
+                    f"invalid XML file: '{xml_file}': "
+                    "property is missing a name or type"
+                )
+                raise XfconfError(err_str)
+            property_type = property_type.strip().lower()
+            cur_property_path = f"{property_path}/{property_name.strip()}"
 
             # if property_type not in ["empty", "uint", "uint64", "int",
             #                          "string", "bool", "array", "double"]:
